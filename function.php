@@ -67,7 +67,7 @@ function register($post) {
     $nomorTelp = $post["telp"];
     $ttl = $post["ttl"];
     $nomorPasport = $post["no_pasport"];
-    $Status_kesehatan = $post["status_kesehatan"];
+    $Status_kesehatan = '';
     $Status_vaksinasi = $post["status_vaksinasi"];
     $warnadefault = dechex(rand(0, 10000000));
 
@@ -82,6 +82,14 @@ function register($post) {
                 </script>
             ";
         return false;
+    }
+
+    if ($Status_vaksinasi === '3') {
+        $Status_kesehatan = 'Hijau';
+    } else if($Status_vaksinasi === '2') {  
+        $Status_kesehatan = 'Kuning';
+    }else {
+        $Status_kesehatan = 'Merah';
     }
     
     if (isset($post["nik"])) {
@@ -222,6 +230,8 @@ function upload() {
 function cekStatus($post,$id) {
     global $db;
 
+    $latitude = $post["latitude"];
+    $longitude = $post["longitude"];
     $namalengkap = $post["nama_lengkap"];
     $thi = $post["thi"];
     $lokasi = $post["lokasi"];
@@ -235,7 +245,7 @@ function cekStatus($post,$id) {
 
     if (in_array($Status_kesehatan, $StatusKesehatan_valid) && in_array($Status_vaksinasi, $StatusVaksinasi_valid)) {
         mysqli_query($db,"INSERT INTO checkin VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi',1)");
-        mysqli_query($db,"INSERT INTO riwayat_perjalanan VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi','-','-')");
+        mysqli_query($db,"INSERT INTO riwayat_perjalanan VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi','-','-','$latitude','$longitude')");
         setcookie('checkin','true',time()+43200);
         setcookie('id',$id, time()+43200);
         header("Location: ticket.php?status=diizinkan");
@@ -245,5 +255,21 @@ function cekStatus($post,$id) {
     }
 }
 
+function checkout($post, $id) {
+    global $db;
+    
+    $lama_perjalanan = $post["lama_perjalanan"];
+    $query_checkin = mysqli_query($db,"SELECT * FROM riwayat_perjalanan WHERE id_user='$id' ORDER BY id DESC");
+    $coba = mysqli_fetch_assoc($query_checkin);
+    $id_checkin = $coba['id'];
+    $tz = 'Asia/Jakarta';
+    $dt = new DateTime("now", new DateTimeZone($tz));
+    $timestamp = $dt->format('Y-m-d G:i:s');
+    mysqli_query($db, "UPDATE riwayat_perjalanan SET checkout='$timestamp', lama_perjalanan='$lama_perjalanan' WHERE id='$id_checkin'");
+    mysqli_query($db, "DELETE FROM checkin WHERE id_user='$id'");
+    setcookie('checkin', '', time() - 86400);
+    setcookie('id', '', time() - 86400);
+    header("Location: index.php");
+}
 
 ?>

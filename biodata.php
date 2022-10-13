@@ -8,10 +8,13 @@ if (!isset($_SESSION["login"])) {
 $id = $_SESSION["login"];
 
 if (isset($_POST["submit"])) {
-    cekStatus($_POST,$id);
+    cekStatus($_POST, $id);
 }
 
+
 $query = query("SELECT * FROM users WHERE Id_user='$id'");
+// $total_keramaian = query("SELECT * FROM checkin WHERE lokasi='Jalan Tungkal V'");
+// var_dump($total_keramaian);
 $tz = 'Asia/Jakarta';
 $dt = new DateTime("now", new DateTimeZone($tz));
 $timestamp = $dt->format('Y-m-d G:i:s');
@@ -52,13 +55,16 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                 </div>
                 <div class="input-group" id="spesial">
                     <label for="lokasi">Lokasi Saat ini</label>
-                    <input type="text" id="lokasi" placeholder=" contoh: nama jalan, kecamatan, kelurahan, provinsi" name="lokasi">
-                    <!-- <ul id="list-kota">
-                        
-                    </ul> -->
+                    <input type="text" id="lokasi" name="lokasi">
+                </div>
+                <div class="input-group">
+                    <label for="total_keramaian">Total Keramaian</label>
+                    <input type="text" id="total_keramaian" value=" / 1000">
                 </div>
                 <input type="hidden" id="Nik" value="<?= $q["Nik"] ?>" name="Nik">
                 <input type="hidden" id="Nomor_paspor" value="<?= $q["Nomor_paspor"] ?>" name="Nomor_paspor">
+                <input type="hidden" name="latitude" id="latitude">
+                <input type="hidden" name="longitude" id="longitude">
                 <div class="input-group">
                     <button type="submit" name="submit">Check In</button>
                 </div>

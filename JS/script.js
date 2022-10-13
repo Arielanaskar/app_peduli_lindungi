@@ -11,12 +11,17 @@ function ambilLokasi() {
     }
 }
 
+
 function tampilkanPosisi(Postion) {
     latitude = Postion.coords.latitude;
     longitude = Postion.coords.longitude;
     document.querySelector('#frame').src = `https://maps.google.com/maps?q=${latitude},${longitude}&layer=c&z=17&sll=${latitude},${longitude}&cbp=13,276.3,0,0,0&cbll=${latitude},${longitude}&hl=en&ved=0CAoQ2wU&sa=X&output=svembed&layer=c`;
+    document.getElementById('latitude').value = latitude;
+    document.getElementById('longitude').value = longitude;
+    // document.querySelector('#frame').src = `https://maps.google.com/maps?q=${latitude},${longitude}&ll${latitude},${longitude}&spn=.0005,.0005&hl=en&output=embed`;
     ambilNamaJalan(latitude,longitude);
 }
+
 
 function ambilNamaJalan(lat,lng) {
     fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=3&q=${lat},${lng}&country=indonesia`)
@@ -26,6 +31,11 @@ function ambilNamaJalan(lat,lng) {
     })
 }
 
+
+
+// document.getElementById('lokasi').value = "<?php $lokasi='Jalan Tungkal V';  ?>";
+
+// ("<?php $namaJalan ="+ 'jalan merdeka' +"?>");
 
 // document.getElementById('lokasi').addEventListener('keyup', function() {
 //     fetch(`https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=3&q=${this.value}`)

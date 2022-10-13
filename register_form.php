@@ -64,20 +64,20 @@ if (isset($_POST["submit"])) {
                         <option value="Warga Negara Asing">Warga Negara Asing</option>
                     </select>
                 </div>
-                <div class="input-box">
+                <!-- <div class="input-box">
                     <label class="details" for="status_kesehatan">Status kesehatan</label><br>
                     <select name="status_kesehatan" id="status_kesehatan" required>
                         <option value="Hijau">Hijau (terbebas dari covid-19)</option>
                         <option value="Kuning">Kuning (OPD orang dalam pengawasan)</option>
                         <option value="Merah">Merah (terjangkit virus covid-19)</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="input-box">
                     <label class="details" for="status_vaksinasi">Status vaksinasi</label><br>
                     <select name="status_vaksinasi" id="status_vaksinasi" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="1">1 x</option>
+                        <option value="2">2 x</option>
+                        <option value="3">3 x</option>
                     </select>
                 </div>
                 <div class="input-box">

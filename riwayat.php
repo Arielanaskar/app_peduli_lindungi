@@ -6,10 +6,15 @@ if (!isset($_SESSION["login"])) {
     header("Location: login_form.php");
 }
 
-$int = 39280970;
-var_dump(is_int($int));
+$id_login = $_SESSION["login"];
+$users = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login'");
 
-
+$json = json_encode($users);
+echo "
+        <script>
+            var text = $json 
+        </script>
+    ";
 ?>
 
 <!DOCTYPE html>
@@ -39,113 +44,115 @@ var_dump(is_int($int));
                 </button>
             </div>
         </div> -->
-        <div class="table-wrapper">
-            <table class="table-responsive card-list-table">
-                <thead>
-                    <tr>
-                        <th>Column #1</th>
-                        <th>Column #2</th>
-                        <th>Column #3</th>
-                        <th>Column #4</th>
-                        <th>Column #5</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                    <tr>
-                        <td data-title="Column #1">Value #1</td>
-                        <td data-title="Column #2">Value #2</td>
-                        <td data-title="Column #3">Value #3</td>
-                        <td data-title="Column #4">Value #4</td>
-                        <td data-title="Column #5">Value #5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="table-wrapper">
+        <table class="table-responsive card-list-table">
+            <thead>
+                <tr>
+                    <th>Column #1</th>
+                    <th>Column #2</th>
+                    <th>Column #3</th>
+                    <th>Column #4</th>
+                    <th>Column #5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+                <tr>
+                    <td data-title="Column #1">Value #1</td>
+                    <td data-title="Column #2">Value #2</td>
+                    <td data-title="Column #3">Value #3</td>
+                    <td data-title="Column #4">Value #4</td>
+                    <td data-title="Column #5">Value #5</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    </div>
+   
+    <script src="JS/riwayat.js"></script>
 </body>
 
 </html>

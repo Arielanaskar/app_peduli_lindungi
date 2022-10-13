@@ -21,6 +21,9 @@ if (isset($_SESSION["login"])) {
     $Photo_profile = '';
 }
 
+if (isset($_POST["btn-checkout"])) {
+    checkout($_POST,$id_login);
+}
 
 ?>
 
@@ -122,7 +125,10 @@ if (isset($_SESSION["login"])) {
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            <a id="btn-cek" href="checkout.php">CHECK OUT SEKARANG</a>
+                            <form action="" method="post">
+                                <input type="hidden" name="lama_perjalanan" id="lama_perjalanan">
+                                <button type="submit" id="btn-cek" name="btn-checkout">CHECK OUT SEKARANG</button>
+                            </form>
                         <?php endif; ?>
                     <?php else : ?>
                         <h3>Lindungi diri dan sekitar dengan <br>berpartipasi dalam <br>Vaksinasi COVID 19</h3>
