@@ -18,7 +18,6 @@ function tampilkanPosisi(Postion) {
     document.querySelector('#frame').src = `https://maps.google.com/maps?q=${latitude},${longitude}&layer=c&z=17&sll=${latitude},${longitude}&cbp=13,276.3,0,0,0&cbll=${latitude},${longitude}&hl=en&ved=0CAoQ2wU&sa=X&output=svembed&layer=c`;
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
-    // document.querySelector('#frame').src = `https://maps.google.com/maps?q=${latitude},${longitude}&ll${latitude},${longitude}&spn=.0005,.0005&hl=en&output=embed`;
     ambilNamaJalan(latitude,longitude);
 }
 

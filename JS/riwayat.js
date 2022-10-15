@@ -1,14 +1,37 @@
+const list_perjalanan = document.querySelectorAll('#list-perjalanan');
+let lokasi = [];
+const map = document.getElementById('map');
+
+
 text.forEach(e => {
-    let lokasi = Object.values(e)
-    
+    lokasi.push(Object.values(e));
 });
-// `https://maps.google.com/maps?q=${-6.3855794},${106.851755}&ll=${-6.3855794},${106.851755}&ll=${-6.22592},${106.8302336}&spn=.0008,.0008&t=p&hl=en&iwloc=B&output=embed`;
 
-// console.log(text.filter(t => t.lokasi = "Jalan Swadaya, Kalimulya, Depok, Jawa Barat, 16413, Indonesia"));
-// "https//:maps.google.com/maps?width=1500&amp;height=1000&amp;hl=en&amp;q=%20+()&amp;t=p&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+list_perjalanan.forEach((e, i) => {
+    e.addEventListener('click', function() {
+        let id = this.attributes['data-id'].value;
+        lokasi.map(function(e){
+            return e
+        }).filter(function(e){
+            if (e[0] === id){
+                console.log(e);
+                let latitude = e[9];
+                let longitude = e[10];
+                map.src = `https://maps.google.com/maps?q=${latitude},${longitude}&ll${latitude},${longitude}&spn=.0005,.0005&hl=en&output=embed`;
+            }
+        })
+    })
+})
 
-// -6.3855794
-// 106.851755
 
-// -6.22592
-// 106.8302336
+
+
+
+
+
+
+
+
+
+
+

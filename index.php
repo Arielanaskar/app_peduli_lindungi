@@ -10,10 +10,23 @@ if (isset($_COOKIE["checkin"])) {
 }
 
 if (isset($_SESSION["login"])) {
+
     $id_login = $_SESSION["login"];
     $users = query("SELECT * FROM users WHERE Id_user='$id_login'");
     $Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
     $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
+
+    $tz = 'Asia/Jakarta';
+    $dt = new DateTime("now", new DateTimeZone($tz));
+    $waktuSaatini = $dt->format('Y-m-d H:i:s');
+    $waktuAwal = findRow("SELECT * FROM checkin WHERE id_user='$id_login'",'tanggal');
+    echo "
+        <script>
+            let waktuAwal = '$waktuAwal';
+            let waktuSaatini = '$waktuSaatini';
+        </script>
+    ";
+
     if (isset($_GET["status"])) {
         mysqli_query($db, "DELETE FROM checkin WHERE id_user='$id_login'");
     }
@@ -24,6 +37,8 @@ if (isset($_SESSION["login"])) {
 if (isset($_POST["btn-checkout"])) {
     checkout($_POST,$id_login);
 }
+
+
 
 ?>
 

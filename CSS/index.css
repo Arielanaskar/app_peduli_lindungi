@@ -218,8 +218,6 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* position: relative; */
-    position: static;
   }
 
   .background-main h3 {

@@ -13,6 +13,7 @@ if (isset($_POST["submit"])) {
 
 
 $query = query("SELECT * FROM users WHERE Id_user='$id'");
+
 // $total_keramaian = query("SELECT * FROM checkin WHERE lokasi='Jalan Tungkal V'");
 // var_dump($total_keramaian);
 $tz = 'Asia/Jakarta';

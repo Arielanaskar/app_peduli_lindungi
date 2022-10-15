@@ -1,6 +1,6 @@
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let seconds;
+let minutes;
+let hours;
 
 let display;
 let lamaWaktu;
@@ -11,6 +11,30 @@ let displayHours =  0;
 let status = 'Stopped';
 let interval = '';
 
+let waktuAwal2;
+let waktuSaatini2;
+
+let waktuTerakhir;
+let arr;
+let jarakWaktu; 
+let days;
+let date_diff;
+let jam;
+
+const caption_main = document.querySelector('.caption-main'); 
+
+waktuAwal2 = new Date(waktuAwal).getTime();
+waktuSaatini2 = new Date(waktuSaatini).getTime();
+
+function timeDiff(waktuAwal,waktuSaatini) {
+	let jarak = waktuSaatini - waktuAwal;
+	days = Math.floor(jarak / 1000 / 60 / (60 * 24));
+	jam = Math.floor(jarak / 1000 / 60 /60);
+	date_diff = new Date( jarak );
+	hours = jam;
+	minutes = date_diff.getMinutes();
+	seconds = date_diff.getSeconds();
+}
 
 function StartWatch()
 {
@@ -56,13 +80,13 @@ function StartWatch()
 	}
 
 	document.getElementById('display').innerText = displayHours + ":" + displayMinutes + ":" + displaySeconds;
-	display = hours +','+ minutes +','+ seconds;
+	// display = hours +','+ minutes +','+ seconds;
 	lamaWaktu = displayHours +':'+ displayMinutes +':'+ displaySeconds;
-	localStorage.setItem('waktuTerakhir',display);
 	document.getElementById('lama_perjalanan').value = lamaWaktu;
 }
 
 function play() {
+	jarakWaktu = timeDiff(waktuAwal2,waktuSaatini2);
 	interval = window.setInterval(StartWatch,1000);
 	status = 'Started';
 }
@@ -72,17 +96,11 @@ function stop() {
 	status = 'Stopped';
 }
 
-const caption_main = document.querySelector('.caption-main'); 
-
 if(caption_main.childNodes[1].nodeName === 'H3') {
 	stop();
-	localStorage.removeItem('waktuTerakhir')
-	// console.log('oke');
 }else {
-	// console.log('ga oke')
 	play();
 }
-
 
 function Reset()
 {
@@ -95,21 +113,7 @@ function Reset()
 }
 
 window.onload = function(){
-	let waktuTerakhir;
-	let arr;
-
-	waktuTerakhir  = localStorage.getItem('waktuTerakhir');
-
-	if (waktuTerakhir == null) {
-		waktuTerakhir;
-		arr;
-	}else{
-		arr = waktuTerakhir.split(',');
-		hours = arr[0];
-		minutes = arr[1];
-		seconds = arr[2];
-	}
-
+	
 	var chart = new CanvasJS.Chart("chartContainer", {
 	theme:"light2",
 	animationEnabled: true,

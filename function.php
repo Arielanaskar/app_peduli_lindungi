@@ -227,7 +227,8 @@ function upload() {
 }
 
 
-function cekStatus($post,$id) {
+function cekStatus($post,$id) 
+{
     global $db;
 
     $latitude = $post["latitude"];
@@ -255,7 +256,8 @@ function cekStatus($post,$id) {
     }
 }
 
-function checkout($post, $id) {
+function checkout($post, $id) 
+{
     global $db;
     
     $lama_perjalanan = $post["lama_perjalanan"];
@@ -272,4 +274,3 @@ function checkout($post, $id) {
     header("Location: index.php");
 }
 
-?>
