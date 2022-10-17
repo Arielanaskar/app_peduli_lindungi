@@ -41,10 +41,10 @@ echo "
                 <h3>PeduliLindungi</h3>
             </div>
             <div class="atasan">
-                <a class="active" href="#Beranda">Beranda</a>
-                <a href="#tentang">Tentang</a>
-                <a href="#statistik">Statistik</a>
-                <a href="#Bahasa">Bahasa</a>
+                <a class="active" href="index.php">Beranda</a>
+                <a href="index.php">Tentang</a>
+                <a href="index.php#statistik">Statistik</a>
+                <a href="index.php#Bahasa">Bahasa</a>
             </div>
             <?php if (isset($_SESSION["login"])) : ?>
                 <?php foreach ($users as $user) : ?>
@@ -102,16 +102,41 @@ echo "
                 </select>
             </div>
             <div class="menubar">
-                <p>List perjalanan</p>
-                <ul>
-                    <?php foreach ($users_riwayat as $key): ?>
-                        <li id="list-perjalanan" data-id="<?= $key["id"] ?>">
-                            <img src="img/map.png" alt="" srcset="">
-                            <p><?= substr($key["lokasi"], 0,55) ?></p>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
+                <div class="group-menubar">
+                    <div class="list-perjalanan">
+                        <p>List perjalanan</p>
+                        <ul>
+                            <?php foreach ($users_riwayat as $key) : ?>
+                                <li id="list-perjalanan" data-id="<?= $key["id"] ?>">
+                                    <img src="img/map.png" alt="" srcset="">
+                                    <p><?= substr($key["lokasi"], 0, 55) ?></p>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="header-details">
+                            <img src="img/left.png" alt="" srcset="" id="back">
+                            <p>Details perjalanan</p>
+                        </div>
+                        <ul>
+                            <li id="nama-jalan">Nama jalan : <br>
+                                <p id="namaJalan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quidem?</p>
+                            </li>
+                            <li id="checkin">Checkin : <br>
+                                <p id="waktuCheckin">10:10:10</p>
+                            </li>
+                            <li id="checkout">Checkout :<br>
+                                <p id="waktuCheckout">10:10:10</p>
+                            </li>
+                            <li id="lama_perjalanan">lama Perjalanan :<br>
+                                <p id="lamaPerjalanan">10:10:10</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                </div>
             <div class="sidebar">
                 <iframe frameborder="0" id="map">
 

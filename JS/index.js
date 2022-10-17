@@ -23,9 +23,6 @@ let jam;
 
 const caption_main = document.querySelector('.caption-main'); 
 
-waktuAwal2 = new Date(waktuAwal).getTime();
-waktuSaatini2 = new Date(waktuSaatini).getTime();
-
 function timeDiff(waktuAwal,waktuSaatini) {
 	let jarak = waktuSaatini - waktuAwal;
 	days = Math.floor(jarak / 1000 / 60 / (60 * 24));
@@ -99,6 +96,8 @@ function stop() {
 if(caption_main.childNodes[1].nodeName === 'H3') {
 	stop();
 }else {
+	waktuAwal2 = new Date(waktuAwal).getTime();
+    waktuSaatini2 = new Date(waktuSaatini).getTime();
 	play();
 }
 
@@ -113,13 +112,13 @@ function Reset()
 }
 
 window.onload = function(){
-	
+
 	var chart = new CanvasJS.Chart("chartContainer", {
 	theme:"light2",
 	animationEnabled: true,
-	axisY :{
-		title: "Jumlah Pasien",
-	},
+	// axisY :{
+	// 	title: "Jumlah Pasien",
+	// },
 	toolTip: {
 		shared: "true"
 	},
@@ -178,4 +177,7 @@ function toggleDataSeries(e) {
 	chart.render();
 }
 
+
+
 }
+

@@ -64,22 +64,6 @@ if (isset($_POST["submit"])) {
                         <option value="Warga Negara Asing">Warga Negara Asing</option>
                     </select>
                 </div>
-                <!-- <div class="input-box">
-                    <label class="details" for="status_kesehatan">Status kesehatan</label><br>
-                    <select name="status_kesehatan" id="status_kesehatan" required>
-                        <option value="Hijau">Hijau (terbebas dari covid-19)</option>
-                        <option value="Kuning">Kuning (OPD orang dalam pengawasan)</option>
-                        <option value="Merah">Merah (terjangkit virus covid-19)</option>
-                    </select>
-                </div> -->
-                <div class="input-box">
-                    <label class="details" for="status_vaksinasi">Status vaksinasi</label><br>
-                    <select name="status_vaksinasi" id="status_vaksinasi" required>
-                        <option value="1">1 x</option>
-                        <option value="2">2 x</option>
-                        <option value="3">3 x</option>
-                    </select>
-                </div>
                 <div class="input-box">
                     <label class="details" for="sandi">Kata Sandi</label><br>
                     <input type="password" placeholder="Masukan Kata Sandi" id="sandi" name="sandi" maxlength="50" required>
@@ -88,6 +72,14 @@ if (isset($_POST["submit"])) {
                 <div class="input-box">
                     <label class="details" for="konfirmasi_sandi">Konfirmasi Kata Sandi</label><br>
                     <input type="password" placeholder="kofirmasi Kata Sandi" id="konfirmasi_sandi" name="konfirmasi_sandi" maxlength="50" required>
+                </div>
+                <div class="input-box">
+                    <label class="details" for="status_vaksinasi" id="label-sv">Status vaksinasi</label><br>
+                    <select name="status_vaksinasi" id="status_vaksinasi" required>
+                        <option value="1">1X (sudah pernah melakukan vaksinasi sebanyak 1 kali)</option>
+                        <option value="2">2X (sudah pernah melakukan vaksinasi sebanyak 2 kali)</option>
+                        <option value="3">3X (sudah mngikuti semua vaksinasi)</option>
+                    </select>
                 </div>
             </div>
             <div class="button">

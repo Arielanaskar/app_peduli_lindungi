@@ -121,8 +121,8 @@ $Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_use
                     </div>
                 <?php else : ?>
                     <div class="vaksin-1">
-                        <h3 style="font-weight: 100;">Vaksinasi Dosis 1 (Belum Divaksinasi)</h3>
-                        <img src="img/remove.png" alt="" srcset="">
+                        <h3 style="font-weight: 100;">Vaksinasi Dosis 1 (Sudah Divaksinasi)</h3>
+                        <img src="img/check.png" alt="" srcset="">
                     </div>
                     <div class="vaksin-2">
                         <h3 style="font-weight: 100;">Vaksinasi Dosis 2 (Belum Divaksinasi)</h3>

@@ -32,6 +32,7 @@ Kewarganegaraan.addEventListener('click', function() {
         Nik.removeAttribute('minlength');
         LabelNik.innerText = 'Negara';
         Nomor_pasport.style.border = '2px solid red';
+        Nomor_pasport.placeholder = 'Masukkan No Pasport (wajib)'
         pesan_passport.style.display = 'inline-block';
         Nomor_pasport.setAttribute('required','');
     }else {

@@ -21,7 +21,7 @@
 
 .container {
     width: 100%;
-    height: 130vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,12 +36,12 @@
 }
 
 .wrapper {
-    width: 1300px;
-    height: max-content;
+    width: 100%;
+    height: 671px;
     /* padding-top: 10px; */
-    border-radius: 10px;
-    /* border: 1px solid gray; */
-    background-color: #fff;
+    /* border-radius: 10px; */
+    /* border: 1px solid red; */
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
@@ -49,8 +49,8 @@
     'menubar sidebar sidebar'
     'menubar sidebar sidebar';
     grid-area: 'wrapper';
-    margin-top: 500px;
-    margin: auto;
+    /* margin-top: 500px; */
+    /* margin: auto; */
 }
 
 .footer {
@@ -67,6 +67,7 @@
     justify-content: space-between;
     align-items: center;
     /* position: fixed; */
+    z-index: 6;
 }
 
 .logo {
@@ -218,12 +219,13 @@
 .nav {
     grid-area: nav;
     /* border: 1px solid salmon; */
-    height: 70px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 10px;
 }
 
 .nav h4 {
@@ -259,27 +261,36 @@
     height: 600px;
     /* border: 1px solid black; */
     border-top: 1px solid gray;
-    border-right: 1px solid gray;
     /* background-color: #e4e4e4; */
     grid-area: menubar;
     padding-top: 40px;
+    position: relative;
     /* margin-left: 50px; */
 }
 
 .sidebar {
-    width: 999px;
+    width: 1048px;
     height: 600px;
     border-top: 1px solid gray;
+    border-left: 1px solid gray;
     /* background-color: red; */
     /* background-color: black; */
     /* border: 1px solid black; */
     grid-area: sidebar;
+    background-color: #fff;
     /* margin-right: 50px; */
+    z-index: 5;
 }
 
 .sidebar iframe {
     width: 100%;
-    height: 635px;
+    height: 600px;
+    z-index: 5;
+}
+
+.group-menubar{
+    width: 700px;
+    /* border: 1px solid fuchsia; */
 }
 
 .menubar p:nth-child(1) {
@@ -290,27 +301,122 @@
     /* margin-bottom: 40px; */
 }
 
-.menubar ul {
-    height: 600px;
-    /* border: 1px solid yellow; */
-    overflow: auto;
+.details {
+    width: 300px;
+    height: 560px;
+    /* display: none; */
+    position: absolute;
+    margin-left: 310px;
+    margin-top: -560px;
+    /* z-index: -1; */
+    /* transition: all 0.5ms; */
+    /* border: 1px solid red; */
+    /* animation: slide 0.5s linear 0.5s forwards; */
+    background-color: rgb(255, 255, 255);
 }
 
-.menubar ul li {
+@keyframes slide {
+    from {
+        margin-left: 310px;
+    }
+    to{
+        margin-left: 0px;
+        /* z-index: 1; */
+        /* transition: ease-in-out 2ms; */
+    }
+}
+
+@keyframes slideout {
+    from {
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 310px;
+        /* z-index: 1; */
+        /* transition: ease-in-out 2ms; */
+    }
+}
+
+.header-details p {
+    font-weight: bold;
+    color: #269AD7;
+    letter-spacing: 0.5px;
+}
+
+.header-details{
+    display: flex;
+    /* border: 1px solid gold; */
+    align-items: center;
+    margin-bottom: 30px;
+}
+.header-details img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+.details ul li {
+    margin-top: 20px;
+    /* border: 1px solid yellow; */
+    margin-left: 20px;
+}
+
+#checkin, #checkout, #lama_perjalanan {
+    display: block;
+    height: 50px;
+}
+
+#checkin p,
+#checkout p,
+#lama_perjalanan p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+#nama-jalan{
+    height: auto;
+    display: block;
+}
+
+#nama-jalan p{
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.list-perjalanan ul {
+    width: 300px;
+    height: 500px;
+    /* border: 1px solid yellow; */
+    overflow: auto;
+    margin-top: 30px;
+}
+
+.list-perjalanan ul::-webkit-scrollbar{
+    width: 7px;
+}
+
+.list-perjalanan ul::-webkit-scrollbar-thumb{
+    background: #C1C1C1;
+    border-radius: 10px;
+}
+
+.list-perjalanan ul li {
     display: flex;
     align-items: center;
     margin-bottom: 50px;
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
     cursor: pointer;
     /* border: 1px solid yellow; */
 }
 
-.menubar ul li p {
+.list-perjalanan ul li p {
     font-size: 14px;
 }
 
-.menubar ul li img{
+.list-perjalanan ul li img{
     width: 30px;
     height: 30px;
     margin-right: 10px;

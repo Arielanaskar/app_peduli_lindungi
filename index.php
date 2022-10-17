@@ -178,7 +178,6 @@ if (isset($_POST["btn-checkout"])) {
             </div>
         </menu>
         <div class="tentang" id="tentang">
-
             <div class="tentang1">
                 <div class="title-about1">
                     <h3 style="color: #0C25A9;">Tentang</h3>
