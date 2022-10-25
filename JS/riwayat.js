@@ -7,11 +7,13 @@ const namaJalan = document.getElementById('namaJalan');
 const waktuCheckin = document.getElementById('waktuCheckin');
 const waktuCheckout = document.getElementById('waktuCheckout');
 const lamaPerjalanan = document.getElementById('lamaPerjalanan');
-
+const filter_lokasi = document.getElementById("filter-lokasi");
 
 text.forEach(e => {
     lokasi.push(Object.values(e));
 });
+
+console.log(lokasi);
 
 list_perjalanan.forEach((e, i) => {
     e.addEventListener('click', function() {
@@ -43,7 +45,10 @@ back.addEventListener('click', function(){
     details.style.animation = 'none';
 })
 
-console.log(back)
+filter_lokasi.addEventListener('keyup', function(){
+    
+})
+
 
 
 

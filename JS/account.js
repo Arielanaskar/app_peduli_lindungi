@@ -10,6 +10,7 @@ let editIcon = document.getElementById('edit');
 let editIcon2 = document.getElementById('edit-2');
 let btnUpload = document.getElementById('gambar');
 let nama = document.getElementById('nama');
+const p = document.getElementById("profile-header");
 
 btn_sertifikat.addEventListener('click', function() {
    btn_profile.style.backgroundColor = 'white';
@@ -17,20 +18,22 @@ btn_sertifikat.addEventListener('click', function() {
    a_sertifikat.style.color = 'white';
    img_sertifikat.src = "img/certificate (1).png";
    a_profile.style.color = '#269AD7';
-   img_profile.src = "img/user (2).png";
+   img_profile.src = "img/user (1).png";
    profile.style.display = 'none';
    sertifikat.style.display = 'inline-block';
+   p.style.display = 'none';
 })
 
 btn_profile.addEventListener('click', function() {
     btn_sertifikat.style.backgroundColor = 'white';
     btn_profile.style.backgroundColor = '#269AD7';
     a_profile.style.color = 'white';
-    img_profile.src = "img/user (1).png";
+    img_profile.src = "img/user (2).png";
     a_sertifikat.style.color = '#269AD7';
     img_sertifikat.src = "img/certificate (2).png";
     profile.style.display = 'flex';
     sertifikat.style.display = 'none';
+    p.style.display = "inline-block";
 });
 
 let btn_wrapper = document.querySelector('.btn-wrapper');
@@ -57,3 +60,5 @@ if (btn_wrapper.childNodes[1].attributes[0].nodeValue === 'bungkus') {
         nama.style.display = 'inline-block';
     })
 }
+
+// console.log(p)

@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
 
 $id_login = $_SESSION["login"];
 $users = query("SELECT * FROM users WHERE Id_user='$id_login'");
-$users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login'");
+$users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login' AND NOT checkout='-'");
 $Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
 $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
 
@@ -29,6 +29,7 @@ echo "
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/riwayat.css">
+    <link rel="stylesheet" href="CSS/riwayat.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@ echo "
             </div>
             <div class="atasan">
                 <a class="active" href="index.php">Beranda</a>
-                <a href="index.php">Tentang</a>
+                <a href="index.php#tentang">Tentang</a>
                 <a href="index.php#statistik">Statistik</a>
                 <a href="index.php#Bahasa">Bahasa</a>
             </div>
@@ -92,7 +93,7 @@ echo "
             <div class="nav">
                 <div class="group-input">
                     <img src="img/search.webp" alt="" srcset="">
-                    <input type="text" name="" id="" placeholder="filter lokasi">
+                    <input type="text" name="" id="filter-lokasi" placeholder="filter lokasi">
                 </div>
                 <h4>Riwayat Perjalanan</h4>
                 <select name="option" id="option">

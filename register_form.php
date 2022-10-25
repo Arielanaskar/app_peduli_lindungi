@@ -46,15 +46,15 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div class="input-box">
                     <label class="details" for="Nik">NIK</label><br>
-                    <input type="text" placeholder="Masukkan NIK" id="Nik" name="nik" minlength="15" maxlength="16" required>
+                    <input type="text" placeholder="Masukkan NIK" id="Nik" name="nik" minlength="16" maxlength="16" required>
                 </div>
                 <div class="input-box">
                     <label class="details" for="Telp">Nomor Telepon</label><br>
-                    <input type="text" placeholder="Masukan No Telepon" id="Telp" name="telp" minlength="14" maxlength="15">
+                    <input type="text" placeholder="Masukan No Telepon" id="Telp" name="telp" minlength="15" maxlength="15">
                 </div>
                 <div class="input-box">
                     <label class="details" for="no_pasport">Nomor Pasport</label><br>
-                    <input type="text" placeholder="Masukan No Pasport (Optional)" id="no_pasport" name="no_pasport" minlength="15" maxlength="16">
+                    <input type="text" placeholder="Masukan No Pasport (Optional)" id="no_pasport" name="no_pasport" minlength="16" maxlength="16">
                     <p id="pesan-passport" style="color: red;">Mohon masukkan nomor passport</p>
                 </div>
                 <div class="input-box">

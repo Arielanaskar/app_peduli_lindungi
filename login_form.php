@@ -8,7 +8,6 @@ if (isset($_POST["submit"])) {
     login($nomor, $password);
 }
 
-
 ?>
 
 

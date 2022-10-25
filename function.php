@@ -87,8 +87,10 @@ function register($post) {
     if ($Status_vaksinasi === '3') {
         $Status_kesehatan = 'Hijau';
     } else if($Status_vaksinasi === '2') {  
+        $Status_kesehatan = 'Hijau';
+    }else if($Status_kesehatan === '1'){
         $Status_kesehatan = 'Kuning';
-    }else {
+    }else{
         $Status_kesehatan = 'Merah';
     }
     
@@ -167,8 +169,10 @@ function update($post,$id) {
     $ttl = $post["ttl"];
     $nomor_pasport = $post["nomor_pasport"];
     $nomor_ponsel = $post["nomor_ponsel"];
+    $gambar_lama = $post["gambar_lama"];
 
-    $gambar = upload();
+    
+    $gambar = upload($gambar_lama);
     if (!$gambar) {
         return false;
     }
@@ -193,11 +197,15 @@ function update($post,$id) {
 }
 
 
-function upload() {
+function upload($gambar_lama) {
     $namaFile = $_FILES["gambar"]['name'];
     $ukuranFile = $_FILES["gambar"]['size'];
     $tmpName = $_FILES["gambar"]['tmp_name'];
+    $error = $_FILES["gambar"]['error'];
 
+    if ($error === 4) {
+        return $gambar_lama;
+    }
 
     $ekstensigambarValid = ['jpg','jpeg','png'];
     $ekstensigambar = explode('.',$namaFile);
