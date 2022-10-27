@@ -52,6 +52,7 @@ if (isset($_POST["btn-checkout"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Datang!</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" href="img/logo.ico" type="image/icon type">
 </head>
 
 <body>
