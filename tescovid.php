@@ -5,13 +5,14 @@ require 'function.php';
 if (!isset($_SESSION["login"])) {
     header("Location: login_form.php");
 }
-$id_login = $_SESSION["login"];
-$users = query("SELECT * FROM users WHERE Id_user='$id_login'");
-$Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
-$data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
-
 $id_user = $_SESSION["login"];
+
+$users = query("SELECT * FROM users WHERE Id_user='$id_user'");
+$Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_user'", "Photo_profile");
+
 $result = query("SELECT * FROM users_status WHERE id_user='$id_user'");
+$status_kesehatan = findRow("SELECT * FROM users_status WHERE id_user='$id_user'",'Status_kesehatan');
+$status_vaksinasi = findRow("SELECT * FROM users_status WHERE id_user='$id_user'",'Status_vaksinasi');
  
 ?>
 
@@ -108,32 +109,62 @@ $result = query("SELECT * FROM users_status WHERE id_user='$id_user'");
                     <div class="group-col2">
                         <div class="group-tex">
                             <p id="head-namatanggal">Nama NIK & Tanggal Lahir</p>
-                            <div class="nama-col2">
-                                <p><pre>Nama Lengkap    :  Alief Panca Rachman</pre></p>
-                            </div>
-                            <div class="nik-col2">
-                                <p><pre>NIK                           :  21479619847</pre></p>
-                            </div>
-                            <div class="ttl-col2">
-                                <p><pre>Tanggal Lahir       :  2022-19-07</pre></p>
-                            </div>
+                            <?php foreach ($users as $key): ?>
+                                <div class="nama-col2">
+                                    <p><pre>Nama Lengkap    :  <?= $key["Nama"] ?></pre></p>
+                                </div>
+                                <div class="nik-col2">
+                                    <p><pre>NIK                           :  <?= $key["Nik"] ?></pre></p>
+                                </div>
+                                <div class="ttl-col2">
+                                    <p><pre>Tanggal Lahir       :  <?= $key["Tanggal_lahir"] ?></pre></p>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <div class="foto-profile">
-                            <!-- <img src="img/user-pic/alief.jpeg" alt="" id="botpic"> -->
-                        </div>
+                        <?php foreach ($users as $key): ?>
+                            <?php if (strlen($Photo_profile) > 1): ?>
+                                <div class="foto-profile" style="background-image: url(img/user-pic/<?= $key["Photo_profile"] ?>);">
+                                    
+                                </div>
+                            <?php else: ?>
+                                <div class="foto-profile" style="background-color: #F4BF00;">
+                                    <h1><?= substr($key["Nama"],0,1) ?></h1>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
                     <p id="head-status">Status kesehatan kamu </p>
                     <div class="status-kesehatan">
-                        <div class="simbol">
-                            <!-- <p>H</p> -->
-                        </div>
-                        <p id="detail-status">Kamu bisa pergi ke tempat umum dengan bebas</p>
+                        <?php if ($status_kesehatan == "Merah"): ?>
+                            <div class="simbol" style="background-color: red;">
+                            
+                            </div>
+                            <p id="detail-status">Kamu tidak di izinkan pergi ke tempat umum</p>
+                        <?php elseif($status_kesehatan == "Kuning"): ?>
+                            <div class="simbol" style="background-color: orange;">
+                            
+                            </div>
+                            <p id="detail-status">Kamu bisa pergi ke tempat umum dengan bebas (dalam pengawasan)</p>
+                        <?php else: ?>
+                            <div class="simbol">
+                                
+                            </div>
+                            <p id="detail-status">Kamu bisa pergi ke tempat umum dengan bebas</p>
+                        <?php endif ?>
                     </div>
                 </div>
                 <div class="status-vaksinasi">
                     <img src="img/vaccination.png" alt="" id="vaksin">
-                    <p>vaksinasi dosis ke 2</p>
-                    <img src="img/check.png" alt="" srcset="" id="check">
+                    <?php if ($status_vaksinasi == "1"): ?>
+                        <p id="vaksin-none">belum melakukan vaksinasi</p>
+                        <img src="img/remove.png" alt="" srcset="" id="remove">
+                    <?php elseif($status_vaksinasi == "2"): ?>
+                        <p>vaksinasi dosis ke 2</p>
+                        <img src="img/check.png" alt="" srcset="" id="check">
+                    <?php else: ?>
+                        <p>vaksinasi dosis ke 3</p>
+                        <img src="img/check.png" alt="" srcset="" id="check">
+                    <?php endif; ?>
                 </div>
                 <div class="hasil-test">
                     <h4>Hasil test COVID-19</h4>
