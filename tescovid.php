@@ -1,3 +1,20 @@
+<?php
+ 
+require 'function.php';
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login_form.php");
+}
+$id_login = $_SESSION["login"];
+$users = query("SELECT * FROM users WHERE Id_user='$id_login'");
+$Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
+$data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
+
+$id_user = $_SESSION["login"];
+$result = query("SELECT * FROM users_status WHERE id_user='$id_user'");
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +73,7 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="not_login">
@@ -89,7 +107,7 @@
                 <div class="main">
                     <div class="group-col2">
                         <div class="group-tex">
-                            <p id="head-namatanggal">Nama, NIK & Tanggal Lahir</p>
+                            <p id="head-namatanggal">Nama NIK & Tanggal Lahir</p>
                             <div class="nama-col2">
                                 <p><pre>Nama Lengkap    :  Alief Panca Rachman</pre></p>
                             </div>
