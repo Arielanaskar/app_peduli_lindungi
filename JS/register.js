@@ -44,5 +44,6 @@ Kewarganegaraan.addEventListener('click', function() {
         Nomor_pasport.style.border = 'none';
         pesan_passport.style.display = 'none';
         Nomor_pasport.removeAttribute('required');
+        Nomor_pasport.placeholder = "Masukan No Pasport (Optional)";
     }
 })

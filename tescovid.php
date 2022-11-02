@@ -88,21 +88,22 @@
                 </div>
                 <div class="main">
                     <div class="group-col2">
-                        <div class="foto-profile">
-                            <!-- <img src="img/user-pic/alief.jpeg" alt="" id="botpic"> -->
-                        </div>
-                            
-                            <p id="head-namatanggal">Nama, NIK dan Tanggal Lahir</p>
+                        <div class="group-tex">
+                            <p id="head-namatanggal">Nama, NIK & Tanggal Lahir</p>
                             <div class="nama-col2">
                                 <p><pre>Nama Lengkap    :  Alief Panca Rachman</pre></p>
                             </div>
                             <div class="nik-col2">
-                                <p><pre>NIK                           :   21479619847</pre></p>
+                                <p><pre>NIK                           :  21479619847</pre></p>
                             </div>
                             <div class="ttl-col2">
-                                <p><pre>Tanggal Lahir       :   2022-19-07</pre></p>
+                                <p><pre>Tanggal Lahir       :  2022-19-07</pre></p>
                             </div>
                         </div>
+                        <div class="foto-profile">
+                            <!-- <img src="img/user-pic/alief.jpeg" alt="" id="botpic"> -->
+                        </div>
+                    </div>
                     <p id="head-status">Status kesehatan kamu </p>
                     <div class="status-kesehatan">
                         <div class="simbol">
