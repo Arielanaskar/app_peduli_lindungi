@@ -6,11 +6,13 @@ if (!isset($_SESSION["login"])) {
     header("Location: login_form.php");
 }
 
+
 $id_login = $_SESSION["login"];
 $users = query("SELECT * FROM users WHERE Id_user='$id_login'");
 $users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login' AND NOT checkout='-'");
 $Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
 $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
+
 
 $json = json_encode($users_riwayat);
 echo "
@@ -93,8 +95,10 @@ echo "
         <div class="wrapper">
             <div class="nav">
                 <div class="group-input">
-                    <img src="img/search.webp" alt="" srcset="">
-                    <input type="text" name="" id="filter-lokasi" placeholder="filter lokasi">
+                    <form action="" method="post">
+                        <img src="img/search.webp" alt="" srcset="">
+                        <input type="text" name="cari" id="filter-lokasi" placeholder="filter lokasi">
+                    </form>
                 </div>
                 <h4>Riwayat Perjalanan</h4>
                 <select name="option" id="option">
@@ -149,6 +153,7 @@ echo "
 
         </div>
     </div>
+    <script src="JS/jquery-3.6.1.min.js"></script>
     <script src="JS/riwayat.js"></script>
 </body>
 

@@ -68,7 +68,7 @@
             <img src="img/background-home.svg" alt="" srcset="">
         </div> -->
         <div class="group-col">
-        <!-- <div class="col1">
+            <div class="col1">
                 <div class="foto-profile">
 
                 </div>
@@ -81,28 +81,21 @@
                     <p>3123462156252353</p>
                 </div>
                 <p id="caption-col1">Hasil tes COVID-19? Hasil tes ini adalah untuk mengecek kesehatan dari pengguna PeduliLindungi.</p>
-            </div> -->
+            </div>
             <div class="col2">
                 <div class="header-col2">
                     <h2>Status vaksinasi & tes COVID-19</h2>
                 </div>
                 <div class="main">
                     <div class="group-col2">
-                        <div class="foto-profile">
-                            <!-- <img src="img/user-pic/alief.jpeg" alt="" id="botpic"> -->
+                        <p id="head-namatanggal">Nama & tangal-lahir</p>
+                        <div class="nama-col2">
+                            <p><pre>Nama Lengkap :   Alief Panca Rachman</pre></p>
                         </div>
-                            
-                            <p id="head-namatanggal">Nama, NIK dan Tanggal Lahir</p>
-                            <div class="nama-col2">
-                                <p><pre>Nama Lengkap    :  Alief Panca Rachman</pre></p>
-                            </div>
-                            <div class="nik-col2">
-                                <p><pre>NIK                           :   21479619847</pre></p>
-                            </div>
-                            <div class="ttl-col2">
-                                <p><pre>Tanggal Lahir       :   2022-19-07</pre></p>
-                            </div>
+                        <div class="ttl-col2">
+                            <p><pre>Tanggal Lahir    :   2022-19-07</pre></p>
                         </div>
+                    </div>
                     <p id="head-status">Status kesehatan kamu </p>
                     <div class="status-kesehatan">
                         <div class="simbol">
