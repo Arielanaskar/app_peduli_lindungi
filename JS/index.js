@@ -21,6 +21,12 @@ let days;
 let date_diff;
 let jam;
 
+const logo = document.querySelector(".logo");
+
+logo.addEventListener("click", function () {
+  document.location.href = "index.php";
+});
+
 const caption_main = document.querySelector('.caption-main'); 
 
 function timeDiff(waktuAwal,waktuSaatini) {

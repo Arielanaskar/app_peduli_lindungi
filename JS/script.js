@@ -2,6 +2,9 @@ let latitude = 0;
 let longitude = 0;
 let pencarian = [];
 let boxPencarian = [];
+let arr = [];
+const total_keramaian = document.getElementById("total_keramaian");
+let lokasisaatini;
 
 function ambilLokasi() {
     if (navigator.geolocation) {
@@ -27,24 +30,12 @@ function ambilNamaJalan(lat,lng) {
     .then(respone => respone.json())
     .then(respone => {
         document.getElementById('lokasi').value = respone[0].display_name;
+        lokasisaatini = respone[0].display_name;
+        checkin.filter((e) => {
+            if (e.lokasi === lokasisaatini) {
+                arr.push(e)
+            }
+        });
+        total_keramaian.value = arr.length +" " + " / 1000"
     })
 }
-
-
-
-// document.getElementById('lokasi').value = "<?php $lokasi='Jalan Tungkal V';  ?>";
-
-// ("<?php $namaJalan ="+ 'jalan merdeka' +"?>");
-
-// document.getElementById('lokasi').addEventListener('keyup', function() {
-//     fetch(`https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=3&q=${this.value}`)
-//     .then(respone => respone.json())
-//     .then(respone => {
-
-//         document.querySelectorAll('#list-kota li').forEach(li => {
-//             li.addEventListener('click', (e,i) => {
-//                 document.getElementById('lokasi').value = e.target.innerText;
-//             })
-//         })
-//     })
-// })

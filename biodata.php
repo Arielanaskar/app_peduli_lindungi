@@ -13,9 +13,16 @@ if (isset($_POST["submit"])) {
 
 
 $query = query("SELECT * FROM users WHERE Id_user='$id'");
+$checkin = query("SELECT * FROM checkin");
+$checkin_encode = json_encode($checkin);
 
-// $total_keramaian = query("SELECT * FROM checkin WHERE lokasi='Jalan Tungkal V'");
-// var_dump($total_keramaian);
+echo "
+    <script>
+        var checkin = $checkin_encode
+    </script>
+";
+
+
 $tz = 'Asia/Jakarta';
 $dt = new DateTime("now", new DateTimeZone($tz));
 $timestamp = $dt->format('Y-m-d G:i:s');
@@ -34,7 +41,8 @@ $timestamp = $dt->format('Y-m-d G:i:s');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/biodata.css">
-    <title>Document</title>
+    <link rel="icon" href="img/logo.ico" type="image/icon type">
+    <title>Checkin</title>
 </head>
 
 <body onload="ambilLokasi();">
@@ -60,7 +68,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                 </div>
                 <div class="input-group">
                     <label for="total_keramaian">Total Keramaian</label>
-                    <input type="text" id="total_keramaian" value=" / 1000">
+                    <input type="text" id="total_keramaian" name="total_keramaian" value="0  / 1000">
                 </div>
                 <input type="hidden" id="Nik" value="<?= $q["Nik"] ?>" name="Nik">
                 <input type="hidden" id="Nomor_paspor" value="<?= $q["Nomor_paspor"] ?>" name="Nomor_paspor">

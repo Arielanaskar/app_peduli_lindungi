@@ -246,11 +246,24 @@ function cekStatus($post,$id)
     $lokasi = $post["lokasi"];
     $Nik = $post["Nik"];
     $Nomor_paspor = $post["Nomor_paspor"];
+    $total_keramaian = (int)explode("/",$post["total_keramaian"])[0];
+
+    if ($total_keramaian === 1000) {
+        echo "
+            <script>
+                alert('maaf anda tidak di perbolehkan masuk karena kapasitas telah mencapai 1000 orang');
+            </script>
+        ";
+        return false;
+        die;
+    }
+
     $Status_kesehatan = findRow("SELECT * FROM users_status WHERE id_user='$id'","Status_kesehatan");
     $Status_vaksinasi = findRow("SELECT * FROM users_status WHERE id_user='$id'","Status_vaksinasi");
 
     $StatusKesehatan_valid = ["Hijau","Kuning"];
     $StatusVaksinasi_valid = ["2","3"];
+
 
     if (in_array($Status_kesehatan, $StatusKesehatan_valid) && in_array($Status_vaksinasi, $StatusVaksinasi_valid)) {
         mysqli_query($db,"INSERT INTO checkin VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi',1)");

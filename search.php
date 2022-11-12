@@ -2,9 +2,8 @@
  
 require 'function.php';
 
-if (!isset($_SESSION["login"])) {
-    header("Location: login_form.php");
-}
+// header("Location: login_form.php");
+
 
 $id_login = $_SESSION["login"];
 $inputValue = $_GET["keyword"];

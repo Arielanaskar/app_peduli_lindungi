@@ -11,6 +11,12 @@ let editIcon2 = document.getElementById('edit-2');
 let btnUpload = document.getElementById('gambar');
 let nama = document.getElementById('nama');
 const p = document.getElementById("profile-header");
+const logo = document.querySelector(".logo");
+
+
+logo.addEventListener("click", function () {
+  document.location.href = "index.php";
+});
 
 btn_sertifikat.addEventListener('click', function() {
    btn_profile.style.backgroundColor = 'white';

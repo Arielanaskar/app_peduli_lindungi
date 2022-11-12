@@ -3,116 +3,301 @@
     src: url(../Fonts/Poppins/Poppins-Medium.ttf);
 }
 
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url(../Fonts/Poppins/Poppins-Light.ttf);
+}
+
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'poppins';
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
+body::-webkit-scrollbar{
+  width: 9px;
+  
+}
+
+body::-webkit-scrollbar-thumb{
+  background: #A7B0B5;
+    border-radius: 10px;
+}
+
+.navbar {
+  width:  100%;
+  /* height: max-content; */
+    color: #269AD7;
+    background-color: #ffffff;
+    padding: 12px;
+    /* box-shadow: 0px 1px 0px rgb(134, 134, 160); */
+    border-bottom: 2px solid #f0f0f0a6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    /* border: 1px solid yellow; */
+}
+
+ .logo {
+        width: 210px;
+        height: 60px;
+        /* border: 1px solid springgreen; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .atasan {
+        background-color: white;
+        /* overflow: hidden; */
+    }
+
+    .atasan a {
+      /* float: right; */
+      color: #269AD7;
+      text-align: center;
+      /* padding: 14px 16px; */
+      margin-right: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .atasan a:hover {
+      color: #269AD7;
+      text-decoration: 3px overline;
+      transition: all 2s;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      background-image: url(../img/logo.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* border: 1px solid fuchsia; */
+    }
+  .account, .not_login{
+    width: 186px;
+    height: 55px;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 25px;
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .not_login {
+    justify-content: space-evenly;
+
+  }
+
+  .not_login a {
+    font-family: 'Poppins-Light';
+    font-size: 16px;
+    text-decoration: none;
+    color: #269AD7;
+  }
+  
+  .account h3 {
+    font-size: 15px;
+    font-family: 'Poppins-Light';
+    color: black;
+
+  }
+
+  .account img {
+    width: 15px;
+    cursor: pointer;
+  }
+
+  .photo-profil,.default {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid red; */
+  }
+  
+  .default {
+    background-color: #F4BF00;
+  }
+  
+  .custom {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #616161;
+  }
+
+  .photo-profil .default h4 {
+    color: black;
+  }
+
+  .dropbtn {
+  width: 186px;
+  height: 55px;
+  position: absolute;
+  /* border: 1px solid red; */
+  cursor: pointer;
+}
+
+.dropdown-content {
+  width: 187px;
+  height: auto;
+  position: absolute;
+  display: none;
+}
+
+.dropdown-content a {
+  height: 50px;
+  border: 1px solid #d8d8d8;
+  color: #000;
+  text-decoration: none;
+  /* vertical-align: middle; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.dropdown-content a img {
+  margin-left: 18px;
+  margin-right: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+.dropbtn:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transform: translateY(56px);
+}
+
+
+.account:hover .dropdown {
+  transform: rotateX(185deg);
+}
+
+.container {
+    width: 100%;
+    height: 130vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     /* text-align: center; */
+    /* border: 1px solid red; */
 }
 
 .title {
     text-align: center;
     color: #269AD7;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* font-size: 20px; */
+    margin-top: 140px;
 }
 
 .select-box, select{
     width: 100%;
-    height: 35px;
+    height: 40px;
     outline: none;
+    /* border: 1px solid red; */
+    /* padding-left: 10px; */
+    border-radius: 5px;
 }
 
 .selected {
-    height: 500px;
+    height: 550px;
     display: flex;
     width: 800px;
     flex-direction: column;
     justify-content: space-between;
-    /* border: 1px solid blue; */
+    /* border: 1px solid red; */
     border-radius: 8px;
 }
 
 .jenis-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
-    padding-left: 20px;
-    height: 150px;
+    /* padding-left: 20px; */
+    height: 180px;
     /* border: 1px solid red; */
+    margin-bottom: 45px;
 }
 
-.btn {
-    width: 200px;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
+.check {
+    display: none;
+}
+
+/* .btn + label {
+  display: inline-block;
+  height: 60px;
+  width: 200px;
+  position: relative;
+  font-size: 20px;
+  border: 4px solid red;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+} */
+
+
+.btn-box {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.input-box{
+  width: 200px;
+  height: 50px;
+  margin-right: 15px;
+  margin-top: 15px;
+  border-radius: 50px;
+  /* border: 0.5px solid gray; */
+}
+
+.input-box label {
+  background-color: #c0c0c0;
+  /* color: white; */
+  height: 50px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 50px;
+}
+
+/* .btn:hover{
     color: white;
     background-color: #269AD7;
-}
 
-.gila {
+} */
+
+.btn-submit {
     background: #269AD7;
     color: white;
     width: 100%;
-    height: 40px;
+    height: 45px;
     border-radius: 5px;
     border: none;
     margin-top: 30px;
     cursor: pointer;
+    margin-bottom: 50px;
 }
-
-/* .gila:hover {
-    color: black;
-    background: linear-gradient(-135deg,#333C83,#BFFFF0);
-    cursor: pointer;
-} */
-/* .wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    float: left;
-}
-
-    
-
-
-form {
-    margin-top: 56px;
-    background-color: aqua  ;
-}
-
-.input-grup {
-    position: relative;
-    margin-bottom: 25px;
-    width: 100%;
-    background-color: aqua;
-}
-.menu{
-    font-family: tahoma;
-    font-weight: bold;
-    height: 70px;
-    width: 100%;
-    background: gray;
-    border-radius: 5px;
-    font-size: 18px;
-}
-label {
-    font-family: comic sans-serif;
-    font-size: 20pt;
-    margin: 10px;
-    padding: 5px;
-    color: black;
-} */
-
-
