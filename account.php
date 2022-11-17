@@ -42,7 +42,7 @@ $check_kewarganegaraan = findRow("SELECT * FROM users WHERE Id_user='$id_login'"
                 <h3>PeduliLindungi</h3>
             </div>
             <div class="atasan">
-                <a class="active" href="index.php">Beranda</a>
+                <a href="index.php#beranda">Beranda</a>
                 <a href="index.php#tentang">Tentang</a>
                 <a href="index.php#statistik">Statistik</a>
                 <a href="index.php#Bahasa">Bahasa</a>

@@ -67,9 +67,9 @@ if (isset($_POST["btn-checkout"])) {
                     <h3>PeduliLindungi</h3>
                 </div>
                 <div class="atasan">
-                    <a class="active" href="#Beranda">Beranda</a>
-                    <a href="#tentang">Tentang</a>
-                    <a href="#statistik">Statistik</a>
+                    <a id="beranda" href="#beranda">Beranda</a>
+                    <a id="tentang" href="#tentang">Tentang</a>
+                    <a id="statistik" href="#statistik">Statistik</a>
                     <a href="#Bahasa">Bahasa</a>
                 </div>
                 <?php if (isset($_SESSION["login"])) : ?>
@@ -178,7 +178,7 @@ if (isset($_POST["btn-checkout"])) {
                 </a>
             </div>
         </menu>
-        <div class="tentang" id="tentang">
+        <div class="tentang">
             <div class="tentang1">
                 <div class="title-about1">
                     <h3 style="color: #0C25A9;">Tentang</h3>
@@ -218,7 +218,7 @@ if (isset($_POST["btn-checkout"])) {
             </div>
 
         </div>
-        <div class="statistik" id="statistik">
+        <div class="statistik">
             <h3>Statistik Covid-19</h3>
             <div id="chartContainer"></div>
         </div>
@@ -260,6 +260,7 @@ if (isset($_POST["btn-checkout"])) {
     </div>
     <script src="JS/index.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="JS/jquery-3.6.1.min.js"></script>
 </body>
 
 </html>

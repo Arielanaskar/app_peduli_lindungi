@@ -20,7 +20,6 @@ let jarakWaktu;
 let days;
 let date_diff;
 let jam;
-
 const logo = document.querySelector(".logo");
 
 logo.addEventListener("click", function () {
@@ -119,6 +118,26 @@ function Reset()
 
 window.onload = function(){
 
+	if (window.location.href.split("#")[1] === "tentang") {
+		window.scroll({
+			top: 850,
+			left: 0,
+			behavior: "smooth",
+    	});
+  	} else if(window.location.href.split("#")[1] === "statistik") {
+		window.scroll({
+			top: 1550,
+			left: 0,
+			behavior: "smooth",
+		});
+	} else if(window.location.href.split("#")[1] === "beranda") {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: "smooth",
+		});
+	}
+
 	var chart = new CanvasJS.Chart("chartContainer", {
 	theme:"light2",
 	animationEnabled: true,
@@ -187,3 +206,27 @@ function toggleDataSeries(e) {
 
 }
 
+
+document.getElementById('tentang').addEventListener('click', function() {
+	window.scroll({
+		top: 850,
+		left: 0,
+		behavior: "smooth",
+	});
+})
+
+document.getElementById("statistik").addEventListener("click", function() {
+	window.scroll({
+		top: 1550,
+		left: 0,
+		behavior: "smooth",
+	});
+})
+
+document.getElementById("beranda").addEventListener("click", function() {
+	window.scroll({
+		top: 0,
+		left: 0,
+		behavior: "smooth",
+	});
+})

@@ -6,9 +6,6 @@ if (!isset($_SESSION["login"])) {
     header("Location: login_form.php");
 }
 
-if (isset($_GET["vaksin"])) {
-    var_dump($_GET["vaksin"]);
-}
 
 $id_login = $_SESSION["login"];
 $users = query("SELECT * FROM users WHERE Id_user='$id_login'");
@@ -32,7 +29,7 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
 </head>
 
 <body onload="ambilLokasi();">
-    <div class="container">
+    <div class="container" id="container">
         <div class="navbar">
             <div class="logo">
                 <div class="icon">
@@ -87,18 +84,27 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
             <h1 id="county">DI DEPOK</h1>
         </div>
         <div class="selected">
-            <h3>Temukan Fasilitas Kesehatan yang Melayani Vaksinasi COVID-19</h3>
+            <h3>Temukan Fasilitas Kesehatan yang Melayani Vaksinasi COVID-19 </h3>
             <div class="select-box">
-                <select name="format" id="format" placeholder="cari kota yang anda pilih">
-                    <option>DEPOK</option>
-                    <option>JAKARTA</option>
-                    <option>BOGOR</option>
-                    <option>BEKASI</option>
-                </select>
+                <div class="terdeteksi" style="background-color: #D1E7DD;">
+                    <img src="img/correct.png" alt="" srcset="" id="img-check">
+                    <p>lokasi terdeteksi </p>
+                    <img src="img/salah.png" alt="" id="close-mesage">
+                </div>
+                <!-- <input type="text" name="cariLokasi" id="CariLokasi" placeholder="Cari Faskes(Contoh: nama Klinik/Puskesmas/Kecamatan)"> -->
+                <div class="format-box">
+                     <select name="format" id="format" required>
+                        <option value="" disabled selected>Pilih kota</option>
+                        <option value="DEPOK">DEPOK</option>
+                        <option value="JAKARTA">JAKARTA</option>
+                        <option value="BOGOR">BOGOR</option>
+                        <option value="BEKASI">BEKASI</option>
+                    </select>
+                </div>
             </div>
-            <form action="" method="get">
+            <!-- <form action="" method="get"> -->
                 <div class="jenis-box">
-                    <h4>Jenis Vaksin Yang dicari (Optional)</h4>
+                    <h4>Jenis Vaksin Yang Tersedia</h4>
                     <div class="btn-box">
                         <div class="input-box">
                             <label for="astra" class="btn" data-status="none">Astrazeneca</label>
@@ -129,10 +135,19 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                         3. Jenis vaksin booster akan diberikan sesuai ketersediaan dan riwayat vaksinasi primer. <br>
                     </p>
                     <div>
-                        <button type="submit" class="btn-submit">Cari Lokasi</button>
+                        <button type="submit" class="btn-submit" data-submit="no">Cari Lokasi</button>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
+        </div>
+        <div class="black-screen">
+
+        </div>
+        <div class="list-card" id="popup">
+            <div class="header-listcard">
+                <h3>Lokasi fasilitas kesehatan di DEPOK</h3>
+                <img src="img/wrong.png" alt="" srcset="" id="close-listcard">
+            </div>
         </div>
     </div>
     <script src="JS/lokasi.js"></script>
