@@ -148,6 +148,41 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                 <h3>Lokasi fasilitas kesehatan di DEPOK</h3>
                 <img src="img/wrong.png" alt="" srcset="" id="close-listcard">
             </div>
+            <div class="main-list-card">
+                <div class="map">
+                    <iframe src="" frameborder="0">
+
+                    </iframe>
+                </div>
+                <list-lokasi>
+
+                </list-lokasi>
+                <!-- <div class="list-lokasi"> -->
+                    <!-- <div class="card-lokasi">
+                        <div class="header-caard">
+                            <h4>RS UI Depok</h4>
+                            <p style="font-size: 14px;">Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424</p>
+                        </div>
+                        <div class="main-card">
+                            <div class="status-faskes">
+                                <img src="img/checked.png" alt="" srcset="">
+                                <p style="font-size: 14px;">siap divaksinasi</p>
+                            </div>
+                            <div class="nomor-faskes">
+                                <img src="img/telephone.png" alt="">
+                                <p style="font-size: 14px;">(021)8729718231</p>
+                            </div>
+                            <a href="" class="arahkan">
+                                <img src="img/map.png" alt="" srcset="">
+                                <p style="font-size: 14px;">arahkan</p>
+                            </a>
+                        </div>
+                        <div class="btn-info">
+                            <p style="font-size: 15px;">INFO SELENGKAPNYA</p>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+            </div>
         </div>
     </div>
     <script src="JS/lokasi.js"></script>
