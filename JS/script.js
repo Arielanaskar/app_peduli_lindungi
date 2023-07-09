@@ -6,6 +6,7 @@ let arr = [];
 const total_keramaian = document.getElementById("total_keramaian");
 let lokasisaatini;
 
+
 function ambilLokasi() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(tampilkanPosisi);
@@ -18,10 +19,12 @@ function ambilLokasi() {
 function tampilkanPosisi(Postion) {
     latitude = Postion.coords.latitude;
     longitude = Postion.coords.longitude;
+    let accuracy = Postion.coords.accuracy;
     document.querySelector('#frame').src = `https://maps.google.com/maps?q=${latitude},${longitude}&layer=c&z=17&sll=${latitude},${longitude}&cbp=13,276.3,0,0,0&cbll=${latitude},${longitude}&hl=en&ved=0CAoQ2wU&sa=X&output=svembed&layer=c`;
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
     ambilNamaJalan(latitude,longitude);
+    console.log(accuracy)
 }
 
 
@@ -30,12 +33,14 @@ function ambilNamaJalan(lat,lng) {
     .then(respone => respone.json())
     .then(respone => {
         document.getElementById('lokasi').value = respone[0].display_name;
-        lokasisaatini = respone[0].display_name;
+        document.getElementById('places_id').value = respone[0].place_id;
+        lokasisaatini = respone[0].place_id;
         checkin.filter((e) => {
-            if (e.lokasi === lokasisaatini) {
+            if (parseInt(e.places_id) === lokasisaatini) {
                 arr.push(e)
             }
         });
+        console.log(respone)
         total_keramaian.value = arr.length +" " + " / 1000"
     })
 }

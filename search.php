@@ -2,9 +2,6 @@
  
 require 'function.php';
 
-// header("Location: login_form.php");
-
-
 $id_login = $_SESSION["login"];
 $inputValue = $_GET["keyword"];
 $users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login' AND lokasi LIKE '%$inputValue%'");

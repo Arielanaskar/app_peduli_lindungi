@@ -41,8 +41,14 @@
     /* padding-top: 10px; */
     /* border-radius: 10px; */
     /* border: 1px solid red; */
-    background-color: rgb(255, 255, 255);
+    /* background: linear-gradient(#EAF5FA,#D5F2FF); */
+    background-color: white;
+    /* margin-left: 30px; */
+    /* margin-right: 30px; */
+    padding-top: 50px;
+    /* border: 1px solid #eee; */
     display: grid;
+    /* color: white; */
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
     'nav nav nav'
@@ -89,6 +95,7 @@
     margin-right: 30px;
     text-decoration: none;
     font-size: 16px;
+    /* border: 1px solid green; */
     cursor: pointer;
 }
 
@@ -227,11 +234,13 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
+    margin-top: 15px;
+    /* border: 1px solid black; */
 }
 
 .nav h4 {
     letter-spacing: 0.5px;
-    color: #269AD7;
+    color: #269AD7
 }
 
 .nav select {

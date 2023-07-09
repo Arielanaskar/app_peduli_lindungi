@@ -45,6 +45,9 @@ if (isset($_POST["submit"])) {
                 <input type="password" id="password" placeholder="Masukan Kata Sandi" name="password" required><br>
                 <button id="submit" type="submit" name="submit">MASUK</button>
             </form>
+            <div class="daftar">
+                <p>Belum punya akun PeduliLindungi? <a href="register_form.php">Daftar</a></p>
+            </div>
        </div>
     </div>
 </div>

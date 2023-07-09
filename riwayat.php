@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
 
 $id_login = $_SESSION["login"];
 $users = query("SELECT * FROM users WHERE Id_user='$id_login'");
-$users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login' AND NOT checkout='-'");
+$users_riwayat = query("SELECT * FROM riwayat_perjalanan WHERE id_user='$id_login' AND NOT checkout='-' ORDER BY riwayat_perjalanan.id DESC");
 $Photo_profile = findRow("SELECT Photo_profile FROM users WHERE Id_user='$id_login'", "Photo_profile");
 $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
 

@@ -91,7 +91,6 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                     <p>lokasi terdeteksi </p>
                     <img src="img/salah.png" alt="" id="close-mesage">
                 </div>
-                <!-- <input type="text" name="cariLokasi" id="CariLokasi" placeholder="Cari Faskes(Contoh: nama Klinik/Puskesmas/Kecamatan)"> -->
                 <div class="format-box">
                      <select name="format" id="format" required>
                         <option value="" disabled selected>Pilih kota</option>
@@ -102,7 +101,6 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                     </select>
                 </div>
             </div>
-            <!-- <form action="" method="get"> -->
                 <div class="jenis-box">
                     <h4>Jenis Vaksin Yang Tersedia</h4>
                     <div class="btn-box">
@@ -138,14 +136,13 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                         <button type="submit" class="btn-submit" data-submit="no">Cari Lokasi</button>
                     </div>
                 </div>
-            <!-- </form> -->
         </div>
         <div class="black-screen">
 
         </div>
         <div class="list-card" id="popup">
             <div class="header-listcard">
-                <h3>Lokasi fasilitas kesehatan di DEPOK</h3>
+                <h3 id="header-text-lokasi">Lokasi fasilitas kesehatan di DEPOK</h3>
                 <img src="img/wrong.png" alt="" srcset="" id="close-listcard">
             </div>
             <div class="main-list-card">
@@ -155,33 +152,8 @@ $data = query("SELECT * FROM checkin WHERE id_user='$id_login'");
                     </iframe>
                 </div>
                 <list-lokasi>
-
+                    
                 </list-lokasi>
-                <!-- <div class="list-lokasi"> -->
-                    <!-- <div class="card-lokasi">
-                        <div class="header-caard">
-                            <h4>RS UI Depok</h4>
-                            <p style="font-size: 14px;">Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424</p>
-                        </div>
-                        <div class="main-card">
-                            <div class="status-faskes">
-                                <img src="img/checked.png" alt="" srcset="">
-                                <p style="font-size: 14px;">siap divaksinasi</p>
-                            </div>
-                            <div class="nomor-faskes">
-                                <img src="img/telephone.png" alt="">
-                                <p style="font-size: 14px;">(021)8729718231</p>
-                            </div>
-                            <a href="" class="arahkan">
-                                <img src="img/map.png" alt="" srcset="">
-                                <p style="font-size: 14px;">arahkan</p>
-                            </a>
-                        </div>
-                        <div class="btn-info">
-                            <p style="font-size: 15px;">INFO SELENGKAPNYA</p>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
             </div>
         </div>
     </div>

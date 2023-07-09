@@ -192,3 +192,15 @@ form .button input{
         width: 0;
     }
 }
+
+.register {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register a {
+    text-decoration: none;
+    color: #1575fe;
+}

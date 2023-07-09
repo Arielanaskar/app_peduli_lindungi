@@ -107,10 +107,10 @@ if (isset($_POST["btn-checkout"])) {
                             </div>
                         <?php endforeach; ?>
                     <?php else : ?>
-                        <div class="not_login">
-                            <a href="login_form.php">Login</a>/
-                            <a href="register_form.php">Register</a>
-                        </div>
+                        <a href="login_form.php" class="not_login">
+                            <p>Login</p><p>/</p>
+                            <p>Register</p>
+                        </a>
                     <?php endif; ?>
                         </div>
         </nav>

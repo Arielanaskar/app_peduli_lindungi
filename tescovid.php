@@ -83,24 +83,7 @@ $status_vaksinasi = findRow("SELECT * FROM users_status WHERE id_user='$id_user'
                     </div>
                 <?php endif; ?>
         </div>
-        <!-- <div class="bg-container">
-            <img src="img/background-home.svg" alt="" srcset="">
-        </div> -->
         <div class="group-col">
-        <!-- <div class="col1">
-                <div class="foto-profile">
-
-                </div>
-                <div class="nama">
-                    <img src="img/pengguna.png" alt="" srcset="">
-                    <h3>Ariel Anaskar</h3>
-                </div>
-                <div class="nik">
-                    <img src="img/credit-card.png" alt="" srcset="">
-                    <p>3123462156252353</p>
-                </div>
-                <p id="caption-col1">Hasil tes COVID-19? Hasil tes ini adalah untuk mengecek kesehatan dari pengguna PeduliLindungi.</p>
-            </div> -->
             <div class="col2">
                 <div class="header-col2">
                     <h2>Status vaksinasi & tes COVID-19</h2>

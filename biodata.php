@@ -74,6 +74,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                 <input type="hidden" id="Nomor_paspor" value="<?= $q["Nomor_paspor"] ?>" name="Nomor_paspor">
                 <input type="hidden" name="latitude" id="latitude">
                 <input type="hidden" name="longitude" id="longitude">
+                <input type="hidden" name="places_id" id="places_id">
                 <div class="input-group">
                     <button type="submit" name="submit">Check In</button>
                 </div>

@@ -174,14 +174,15 @@ footer {
   
   .not_login {
     justify-content: space-evenly;
-
+    text-decoration: none;
   }
 
-  .not_login a {
+  .not_login p {
     font-family: 'Poppins-Light';
     font-size: 16px;
     text-decoration: none;
     color: #269AD7;
+    font-weight: 100;
   }
   
   .account h3 {

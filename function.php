@@ -174,7 +174,7 @@ function update($post,$id) {
     
     $gambar = upload($gambar_lama);
     if (!$gambar) {
-        return false;
+        return " ";
     }
 
     mysqli_query($db,"UPDATE users SET Nama='$Username', Nik='$Nik', No_hp='$nomor_ponsel', Tanggal_lahir='$ttl', Nomor_paspor='$nomor_pasport', Kewarganegaraan='$kewarganegaraan', Photo_profile='$gambar' WHERE Id_user='$id'");
@@ -246,6 +246,7 @@ function cekStatus($post,$id)
     $lokasi = $post["lokasi"];
     $Nik = $post["Nik"];
     $Nomor_paspor = $post["Nomor_paspor"];
+    $places_id = $_POST["places_id"];
     $total_keramaian = (int)explode("/",$post["total_keramaian"])[0];
 
     if ($total_keramaian === 1000) {
@@ -266,13 +267,12 @@ function cekStatus($post,$id)
 
 
     if (in_array($Status_kesehatan, $StatusKesehatan_valid) && in_array($Status_vaksinasi, $StatusVaksinasi_valid)) {
-        mysqli_query($db,"INSERT INTO checkin VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi',1)");
+        mysqli_query($db,"INSERT INTO checkin VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi',1,$places_id)");
         mysqli_query($db,"INSERT INTO riwayat_perjalanan VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi','-','-','$latitude','$longitude')");
         setcookie('checkin','true',time()+43200);
         setcookie('id',$id, time()+43200);
         header("Location: ticket.php?status=diizinkan");
     } else {
-        mysqli_query($db, "INSERT INTO checkin VALUES('','$id','$namalengkap','$Nik','$Nomor_paspor','$thi','$lokasi',1)");
         header("Location: ticket.php?status=tidakdizinkan");
     }
 }

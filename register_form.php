@@ -9,10 +9,6 @@ if (isset($_POST["submit"])) {
 
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,6 +83,9 @@ if (isset($_POST["submit"])) {
                 <input type="submit" value="Register" name="submit" id="submit">
             </div>
         </form>
+        <div class="register">
+                <p>Sudah memiliki akun PeduliLindungi? <a href="login_form.php">Login</a></p>
+        </div>
     </div>
     <script src="JS/register.js"></script>
 </body>
