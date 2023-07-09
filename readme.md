@@ -1,13 +1,13 @@
 <p align="center">
-    <img src="https://i.ibb.co/Ps2bhfH/logo5.png" width="200px">
+    <img src="https://i.ibb.co/Dk5MLbR/logo-pedulilindungi.png" width="400px">
 </p>
 
-<h1 align="center">Aplikasi Kasir Restoran</h1>
+<h1 align="center">Aplikasi PeduliLindungi</h1>
 
 <span align="center">
     
-![GitHub repo size](https://img.shields.io/github/repo-size/Arielanaskar/app_kasir_restoran)
-![GitHub last commit](https://img.shields.io/github/last-commit/Arielanaskar/app_kasir_restoran)
+![GitHub repo size](https://img.shields.io/github/repo-size/Arielanaskar/app_peduli_lindungi)
+![GitHub last commit](https://img.shields.io/github/last-commit/Arielanaskar/app_peduli_lindungi)
     
 </span>
 
@@ -22,67 +22,74 @@
 </ul>
 <br/>
 <h3>Fitur Aplikasi :</h3>
-<h4>Manager</h4>
-  <p>Sebagai seorang manager, Anda memiliki kontrol penuh atas aplikasi ini. Fitur-fitur yang tersedia untuk level hak akses manager antara lain:</p>
-  <ul>
-    <li>Melihat laporan penjualan secara harian, bulanan, maupun keseluruhan.</li>
-    <li>Mengelola produk, termasuk menambah, menghapus, dan memperbarui informasi produk.</li>
-    <li>Memantau aktivitas pegawai dalam aplikasi.</li>
-  </ul>
-
-  <h4>Kasir</h4>
-  <p>Sebagai seorang kasir, Anda bertanggung jawab untuk menangani transaksi penjualan. Berikut adalah fitur-fitur yang tersedia untuk level hak akses kasir:</p>
-  <ul>
-    <li>Melakukan transaksi penjualan dengan input produk, kuantitas, dan meja.</li>
-    <li>Mencetak struk pembayaran untuk pelanggan.</li>
-    <li>Melihat riwayat transaksi penjualan pribadi.</li>
-    <li>Memperbarui status pembayaran untuk transaksi tertentu.</li>
-  </ul>
-
-  <h4>Admin</h4>
-  <p>Sebagai seorang admin, Anda memiliki peran penting dalam pengaturan sistem aplikasi. Fitur-fitur yang tersedia untuk level hak akses admin meliputi:</p>
-  <ul>
-    <li>Mengelola akun pegawai, termasuk membuat, menghapus, dan memperbarui informasi pegawai.</li>
-    <li>Mengatur level hak akses pegawai.</li>
-    <li>Memantau aktivitas pegawai dalam aplikasi.</li>
-  </ul>
+<h4>Checkin & Checkout</h4>
+    <p>Pengguna dapat melakukan checkin dan checkout ketika ingin memasuki sebuah tempat</p
 <br>
-<h3> Beberapa Tampilan Aplikasi :</h3>
+<h4>Vaksinasi & Imunisasi</h4>
+    <p>Pengguna dapat mencari lokasi rumah sakit yang menyediakan vaksinasi sejabodebek(jakarta, bogor, depok, bekasi). dan user juga dapat melihat detail dari rumah sakit tersebut</p
+<br>
+<h4>Riwayat Perjalanan</h4>
+    <p>Pengguna dapat melihat riwayat dari perjalanan yang dilakukan serta melihat detail perjalanan nya seperti jam dari checkin & checkout, alamat, dan tanggal</p>
+<br>
+<h3>Beberapa Tampilan Aplikasi :</h3>
 <br>
 <table>
 <tr>
     <td>
-    <small>Halaman List Menu</small>
-        <img src="https://i.ibb.co/JrcCyRc/Screenshot-297.png" alt="Screenshot-297" width="100%" border="0">
+    <small>Halaman Login</small>
+        <img src="https://i.ibb.co/NKJ80tH/Screenshot-404.png" alt="Screenshot-297" width="100%" border="0">
     </td>
     <td>
-    <small>Halaman Order Menu</small>
-        <img src="https://i.ibb.co/PTKJzLz/Screenshot-300.png" alt="Screenshot-300" width="100%" border="0">   
+    <small>Halaman Register</small>
+        <img src="https://i.ibb.co/tqV8rXh/Screenshot-405.png" alt="Screenshot-300" width="100%" border="0">   
     </td>
 </tr>
 <tr>
     <td>
-        <small>Pemilihan Meja</small>
-        <img src="https://i.ibb.co/dkXqfxR/Screenshot-301.png" alt="Screenshot-301" width="100%" border="0">
+        <small>Halaman Utama</small>
+        <img src="https://i.ibb.co/RbbvwwR/Screenshot-395.png" alt="Screenshot-301" width="100%" border="0">
     </td>
      <td>
-        <small>Halaman Data Transaksi</small>
-        <img src="https://i.ibb.co/TgQB2wR/Screenshot-302.png" alt="Screenshot-302" width="100%" border="0">
+        <small>Halaman Akun</small>
+        <img src="https://i.ibb.co/nbyPF9T/Screenshot-397.png" alt="Screenshot-302" width="100%" border="0">
     </td>
 </tr>
 <tr>
     <td>
-        <small>Log Aktivitas</small>
-        <img src="https://i.ibb.co/Ws487dK/Screenshot-303.png" alt="Screenshot-303" width="100%" border="0">
+        <small>Halaman Vaksinasi & Imunsasi 1</small>
+        <img src="https://i.ibb.co/4s6dnr0/Screenshot-406.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+    <td>
+        <small>Halaman Vaksinasi & Imunsasi 2</small>
+        <img src="https://i.ibb.co/6DnhWY5/Screenshot-407.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+</tr>   
+<tr>
+    <td>
+        <small>Halaman Hasil test covid</small>
+        <img src="https://i.ibb.co/RymqvbG/Screenshot-408.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+    <td>
+        <small>Halaman Riwayat perjalanan</small>
+        <img src="https://i.ibb.co/0JC2Vk3/Screenshot-398.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+</tr>   
+<tr>
+    <td>
+        <small>Halaman Checkin 1</small>
+        <img src="https://i.ibb.co/S5SM79k/Screenshot-409.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+    <td>
+        <small>Halaman Checkin 2</small>
+        <img src="https://i.ibb.co/pdHxGtc/Screenshot-400.png" alt="Screenshot-303" width="100%" border="0">
     </td>
 </tr>   
 </table> 
 <br><br>
 
 ### <p>Tanggal Rilis</p>
-**Release date : 4 April 2023**
-> Siapapun diperbolehkan untuk fork/clone atau develop project ini dan berikan project stars dan follow akun saya juga oke, karena ini merupakan project yang saya buat ketika UKK
-
+**Release date : 9 July 2023**
+>catatan: aplikasi ini memakai api yang harus menggunakan titik koordinasi untuk mengambil posisi lokasi, jadi jika ingin aplikasi berjalan dengan baik pastikan selalu izinkan untuk mengakses lokasi pada saat menjalankan nya 
 ------------
 ## 💻 Panduan Instalasi Project
 
@@ -91,53 +98,22 @@
 git clone https://github.com/Arielanaskar/app_peduli_lindungi.git
 ```
 
-3. **Buka folder ```database``` lalu import database ke phpmyadmin / apapun** 
+2. **Buka folder ```database``` lalu import database ke phpmyadmin / apapun** 
+
+3. **Buka ```function.php``` lalu ubah baris berikut sesuaikan dengan nama databasemu yang dipakai**
 ```bash
-php artisan migrate
-php artisan db:seed
+$db = mysqli_connect("localhost","root","","pedulilindungi");
 ```
 
-2. **Buka ```function.php``` lalu ubah baris berikut sesuaikan dengan databasemu yang ingin dipakai**
-```
-DB_PORT=3306
-DB_DATABASE=app_kasir_restoran
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-
-4. **Jalankan bash**
+4. **Jalankan website**
 ```bash
-php artisan key:generate
-php artisan config:cache
-php artisan storage:link
-php artisan route:clear
-```
-
-5. **Jalankan website**
-```bash
-php artisan serve
-```
-
-5. **Akun Login**
-```bash
-Admin
-username: admin
-password: asd321 
-
-Manager
-username: manager 
-password: asd321
-
-Kasir
-username: cashier
-password: asd321 
+localhost/app_peduli_lindungi
 ```
 
 ## 🧑 Pemilik
 
 👤  <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
-- Facebook : <a href="https://web.facebook.com/ariel.anaskar.9"> Ariel Anaskar</a>
+- Facebook : <a href="https://web.facebook.com/ariel.anaskar.95"> Ariel Anaskar</a>
 
 ## Contributing
 Contributions, issues and feature requests di persilahkan.
