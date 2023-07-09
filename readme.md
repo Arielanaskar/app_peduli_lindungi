@@ -16,8 +16,8 @@
 <h3>Teknologi yang digunakan :</h3>
 <ul>
 <li>Front End : HTML, CSS</li>
-<li>Backend : PHP Native</li>
-<li>Javascript : Native Javascript, & Jquery</li>
+<li>Backend : PHP Native, Vanilla Javascript, & Jquery</li>
+<li>Database : MySql</li>
 <li>
     API : 
     <ul>
@@ -28,14 +28,22 @@
 </ul>
 <br/>
 <h3>Fitur Aplikasi :</h3>
-<h4>Checkin & Checkout</h4>
+<ul>
+    <li>
+        <h4>Checkin & Checkout</h4>
+    </li>
     <p>Pengguna dapat melakukan checkin dan checkout ketika ingin memasuki sebuah tempat</p
-<br>
-<h4>Vaksinasi & Imunisasi</h4>
+    <br>   
+    <li>
+        <h4>Vaksinasi & Imunisasi</h4>
+    </li>
     <p>Pengguna dapat mencari lokasi rumah sakit yang menyediakan vaksinasi sejabodebek(jakarta, bogor, depok, bekasi). dan user juga dapat melihat detail dari rumah sakit tersebut</p
-<br>
-<h4>Riwayat Perjalanan</h4>
+    <br>
+    <li>
+        <h4>Riwayat Perjalanan</h4
+    </li>
     <p>Pengguna dapat melihat riwayat dari perjalanan yang dilakukan serta melihat detail perjalanan nya seperti jam dari checkin & checkout, alamat, dan tanggal</p>
+</ul>
 <br>
 <h3>Beberapa Tampilan Aplikasi :</h3>
 <br>
