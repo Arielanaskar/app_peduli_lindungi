@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.ibb.co/Dk5MLbR/logo-pedulilindungi.png" width="400px">
+    <img src="https://i.ibb.co/2jzd0Qn/logo-pedulilindungi-Recovered.png" width="400px">
 </p>
 
 <h1 align="center">Aplikasi PeduliLindungi</h1>
@@ -15,10 +15,16 @@
 <br/>
 <h3>Teknologi yang digunakan :</h3>
 <ul>
-<li>Front End : HTML, Bootstrap</li>
-<li>Backend : Laravel PHP FrameWork</li>
+<li>Front End : HTML, CSS</li>
+<li>Backend : PHP Native</li>
 <li>Javascript : Native Javascript, & Jquery</li>
-<li>Bootstrap Theme By <a href='https://themes.3rdwavemedia.com/'>[Xiaoying Riley]</a></li>
+<li>
+    API : 
+    <ul>
+        <li> nominatim.org/release-docs/develop </li>
+        <li> kipi.covid19.go.id/api </li>
+    </ul>
+</li>
 </ul>
 <br/>
 <h3>Fitur Aplikasi :</h3>
