@@ -58,7 +58,6 @@ if (isset($_POST["btn-checkout"])) {
 <body>
     <div class="container">
         <nav>
-
             <div class="navbar">
                 <div class="logo">
                     <div class="icon">
